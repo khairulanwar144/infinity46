@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinity46 - Spirit of New Era</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins & Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", sans-serif;
+      }
+      /* Custom colors for a more vibrant theme */
+      .text-orange-600 {
+        color: #ff6700;
+      }
+      .bg-orange-600 {
+        background-color: #ff6700;
+      }
+      .text-blue-700 {
+        color: #1e40af;
+      }
+      .bg-blue-700 {
+        background-color: #1e40af;
+      }
+      .bg-gradient-blue-orange {
+        background-image: linear-gradient(135deg, #1e40af, #ff6700);
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hide sections initially and add transition */
+      .page-section {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .page-section.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero banner custom style with gradient overlay */
+      .hero-banner {
+        background-image: url("https://placehold.co/1920x800/1E40AF/ffffff?text=INFINITY46+-+A+New+Beginning");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .hero-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 64, 175, 0.8),
+          rgba(255, 103, 0, 0.8)
+        );
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#home" class="text-2xl font-bold text-blue-700">Infinity46</a>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+          <li>
+            <a href="#home" class="hover:text-orange-600 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#activities"
+              class="hover:text-orange-600 transition-colors"
+              >Activities</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-orange-600 transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="md:hidden bg-white shadow-lg py-2">
+        <a
+          href="#home"
+          class="block py-2 px-4 text-gray-700 hover:bg-gray-100"
+          onclick="hideMenu()"
+          >Home</a
+        >
+        <a
+          href="#activities"
+          class="block py-2 px-4 text-gray-700 hover:bg-gray-100"
+          onclick="hideMenu()"
+          >Activities</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-4 text-gray-700 hover:bg-gray-100"
+          onclick="hideMenu()"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+      <!-- Home Section (Now includes About Us and JKT48 Profile content) -->
+      <section id="home" class="page-section active">
+        <!-- Hero Banner -->
+        <div
+          class="hero-banner text-white flex items-center justify-center text-center py-24 relative overflow-hidden"
+        >
+          <div class="container mx-auto px-4 relative z-10">
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg animate-pulse-slow"
+            >
+              Infinity46
+            </h1>
+            <p class="text-lg sm:text-xl drop-shadow-lg max-w-2xl mx-auto">
+              Semangat Tanpa Batas, di Era yang Baru.
+            </p>
+          </div>
+        </div>
+
+        <!-- About Us Content -->
+        <div class="py-16 bg-blue-50">
+          <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-700">
+              About Us
+            </h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+              <h3 class="text-2xl font-semibold mb-4 text-orange-600">
+                Tentang Komunitas
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Infinity46 adalah komunitas penggemar yang berdedikasi untuk
+                mendukung JKT48. Berawal dari komunitas Infinity48 yang
+                didirikan pada tahun 2022, kami kini hadir kembali dengan
+                semangat baru dan visi yang lebih kuat.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Kami bertujuan untuk menjadi wadah bagi fandom yang positif dan
+                konstruktif, sekaligus menjadi sumber informasi terpercaya
+                tentang semua hal terkait JKT48 dan kegiatan komunitas kami.
+              </p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+              <h3 class="text-2xl font-semibold mb-4 text-orange-600">
+                Sejarah & Perjalanan
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Komunitas Infinity48 berdiri pada tahun 2022. Nama "Infinity"
+                melambangkan semangat tanpa batas dalam mendukung idola,
+                sementara "48" diambil dari identitas grup idola. Logo awal kami
+                adalah perpaduan pop-art yang cerah dengan warna biru dan
+                oranye, mencerminkan semangat yang tak pernah pudar.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Pada tahun 2024, sebuah insiden tak terduga menyebabkan grup dan
+                akun Infinity48 kami hilang/terblokir. Kejadian ini menjadi
+                titik balik bagi komunitas untuk berbenah. Untuk membangkitkan
+                kembali semangat, kami memutuskan untuk melakukan rebranding.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Rebranding menjadi Infinity46 menandai babak baru. "46" dipilih
+                sebagai angka yang mewakili era baru, namun tetap membawa
+                semangat dan visi yang sama dari masa Infinity48. Kami tidak
+                melupakan akar kami, melainkan melangkah maju dengan harapan
+                yang lebih besar.
+              </p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-semibold mb-4 text-orange-600">
+                INF46: Agensi Halu Idol
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Sebagai bagian dari evolusi kami, dibentuklah sub-unit
+                **INF46**. Kami menyebutnya sebagai "agensi halu idol" yang
+                menjadi wadah bagi kreativitas. INF46 fokus mengelola berbagai
+                proyek kreatif, produksi konten digital, dan aktivitas penggemar
+                yang unik, memastikan komunitas kami selalu aktif dan inovatif.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JKT48 Profile Content -->
+        <div class="py-16">
+          <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-700">
+              JKT48 Profile
+            </h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-semibold mb-4 text-orange-600">
+                Profil JKT48
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-6">
+                JKT48 adalah grup idola pertama di Indonesia dan sister grup
+                pertama AKB48 di luar Jepang. Sejak debut pada tahun 2011,
+                mereka telah melalui berbagai fase, melahirkan banyak generasi
+                anggota, dan mempertahankan teater sebagai rumah mereka.
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 text-orange-600">
+                Sistem Idol Jepang
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Sistem idola Jepang yang dianut JKT48 menekankan konsep "idola
+                yang bisa ditemui". Fans bisa berinteraksi langsung melalui
+                berbagai kegiatan, termasuk pertunjukan di teater, handshake,
+                dan acara khusus lainnya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Activities Section (Combined Gallery, Updates, Projects) -->
+      <section id="activities" class="page-section py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center mb-12 text-blue-700">
+            Activities
+          </h2>
+
+          <h3 class="text-2xl font-bold mb-6 text-orange-600">
+            News & Updates
+          </h3>
+          <div class="space-y-6 mb-12">
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105 duration-300"
+            >
+              <p class="text-sm text-gray-500 mb-1">15 Agustus 2024</p>
+              <h4 class="text-xl font-semibold mb-2 text-orange-600">
+                JKT48 Rilis Single Baru!
+              </h4>
+              <p class="text-gray-700">
+                JKT48 baru saja merilis single terbaru mereka. Cek detail
+                lengkapnya di sini!
+              </p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105 duration-300"
+            >
+              <p class="text-sm text-gray-500 mb-1">10 Agustus 2024</p>
+              <h4 class="text-xl font-semibold mb-2 text-orange-600">
+                INF46 Adakan Fanmeet Halu Pertama
+              </h4>
+              <p class="text-gray-700">
+                Unit INF46 sukses mengadakan fanmeet "halu" pertamanya secara
+                daring. Antusiasme fans luar biasa!
+              </p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105 duration-300"
+            >
+              <p class="text-sm text-gray-500 mb-1">01 Agustus 2024</p>
+              <h4 class="text-xl font-semibold mb-2 text-orange-600">
+                Infinity46 Resmi Dideklarasikan
+              </h4>
+              <p class="text-gray-700">
+                Komunitas Infinity46 secara resmi memulai kembali perjalanannya,
+                membawa semangat baru dan nama baru.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold mb-6 text-orange-600">Our Projects</h3>
+          <div class="space-y-8 mb-12">
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-start md:items-center transition-transform hover:scale-105 duration-300"
+            >
+              <img
+                src="https://placehold.co/150x150/FF8C00/ffffff?text=INF46+Digital+Comic"
+                alt="Project 1"
+                class="rounded-xl mb-4 md:mb-0 md:mr-6"
+              />
+              <div>
+                <h4 class="text-xl font-semibold mb-2 text-orange-600">
+                  INF46 Digital Comic
+                </h4>
+                <p class="text-gray-700">
+                  Proyek komik digital berseri yang menceritakan petualangan
+                  "halu" para idol INF46. Rilis setiap bulan!
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-start md:items-center transition-transform hover:scale-105 duration-300"
+            >
+              <img
+                src="https://placehold.co/150x150/2563EB/ffffff?text=Fan+Event+Series"
+                alt="Project 2"
+                class="rounded-xl mb-4 md:mb-0 md:mr-6"
+              />
+              <div>
+                <h4 class="text-xl font-semibold mb-2 text-orange-600">
+                  Seri Fan Event Lokal
+                </h4>
+                <p class="text-gray-700">
+                  Mengadakan acara pertemuan fans di berbagai kota untuk
+                  mempererat tali silaturahmi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-center mb-6 text-orange-600">
+            Gallery
+          </h3>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          >
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/FF8C00/ffffff?text=Momen+2022"
+                alt="Foto dokumentasi 1"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/2563EB/ffffff?text=Acara+Fans+2023"
+                alt="Foto dokumentasi 2"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/FF8C00/ffffff?text=Project+Digital"
+                alt="Foto dokumentasi 3"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/2563EB/ffffff?text=Rebranding+Launch"
+                alt="Foto dokumentasi 4"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/FF8C00/ffffff?text=Konten+Kreatif"
+                alt="Foto dokumentasi 5"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/2563EB/ffffff?text=Momen+JKT48"
+                alt="Foto dokumentasi 6"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/FF8C00/ffffff?text=Kebersamaan"
+                alt="Foto dokumentasi 7"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://placehold.co/600x400/2563EB/ffffff?text=Event+2024"
+                alt="Foto dokumentasi 8"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Admin Section -->
+      <section id="contact" class="page-section py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center mb-12 text-blue-700">
+            Hubungi Kami
+          </h2>
+          <div class="bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto">
+            <p class="text-gray-700 mb-6 text-center">
+              Ada pertanyaan atau ingin berkolaborasi? Silakan hubungi admin
+              kami melalui formulir di bawah ini.
+            </p>
+            <form action="#" method="POST">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-semibold mb-2"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-gray-700 font-semibold mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-semibold mb-2"
+                  >Pesan</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400"
+                >
+                  Kirim Pesan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 Infinity46. All Rights Reserved.</p>
+        <p class="text-sm mt-2">Didedikasikan untuk JKT48.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript untuk interaksi -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll("nav a");
+        const sections = document.querySelectorAll(".page-section");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // Fungsi untuk menampilkan bagian halaman yang sesuai
+        const showPage = (targetId) => {
+          sections.forEach((section) => {
+            section.classList.remove("active");
+            // Hide all sections that are not the target
+            section.style.display = "none";
+          });
+          const targetSection = document.getElementById(targetId);
+          targetSection.classList.add("active");
+          targetSection.style.display = "block";
+        };
+
+        // Menangani klik pada link navigasi
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("href").substring(1);
+            showPage(targetId);
+            window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top of the page
+          });
+        });
+
+        // Menangani klik tombol menu mobile
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Sembunyikan menu mobile setelah klik link
+        window.hideMenu = () => {
+          mobileMenu.classList.add("hidden");
+        };
+
+        // Show home section on initial load
+        showPage("home");
+      });
+    </script>
+  </body>
+</html>
